@@ -1162,7 +1162,7 @@ class Main extends CI_Controller {
 				$dataq = array(
 						'idno' 				=> $idno,
 						'tgl_request' 		=> $tgl_request,
-						'user_request' 		=> 'BUDI',
+						'user_request' 		=> $this->session->userdata('namaq'),
 						'nama_form'			=> $lokasi, 
 						'tgl_inputform' 	=> $tglq,
 						'st_approv01' 		=> 0,
@@ -1246,7 +1246,7 @@ class Main extends CI_Controller {
 				$dataq = array(
 						'idno' 				=> $idno,
 						'tgl_request' 		=> $tgl_request,
-						'user_request' 		=> 'BUDI',
+						'user_request' 		=> $this->session->userdata('namaq'),
 						'nama_form'			=> $lokasi, 
 						'tgl_inputform' 	=> $tglq,
 						'st_approv01' 		=> 0,
@@ -1330,7 +1330,7 @@ class Main extends CI_Controller {
 				$dataq = array(
 						'idno' 				=> $idno,
 						'tgl_request' 		=> $tgl_request,
-						'user_request' 		=> 'BUDI',
+						'user_request' 		=> $this->session->userdata('namaq'),
 						'nama_form'			=> $lokasi, 
 						'tgl_inputform' 	=> $tglq,
 						'st_approv01' 		=> 0,
@@ -1414,7 +1414,7 @@ class Main extends CI_Controller {
 				$dataq = array(
 						'idno' 				=> $idno,
 						'tgl_request' 		=> $tgl_request,
-						'user_request' 		=> 'BUDI',
+						'user_request' 		=> $this->session->userdata('namaq'),
 						'nama_form'			=> $lokasi, 
 						'tgl_inputform' 	=> $tglq,
 						'st_approv01' 		=> 0,
@@ -1498,7 +1498,7 @@ class Main extends CI_Controller {
 				$dataq = array(
 						'idno' 				=> $idno,
 						'tgl_request' 		=> $tgl_request,
-						'user_request' 		=> 'BUDI',
+						'user_request' 		=> $this->session->userdata('namaq'),
 						'nama_form'			=> $lokasi, 
 						'tgl_inputform' 	=> $tglq,
 						'st_approv01' 		=> 0,
@@ -1582,7 +1582,7 @@ class Main extends CI_Controller {
 				$dataq = array(
 						'idno' 				=> $idno,
 						'tgl_request' 		=> $tgl_request,
-						'user_request' 		=> 'BUDI',
+						'user_request' 		=> $this->session->userdata('namaq'),
 						'nama_form'			=> $lokasi, 
 						'tgl_inputform' 	=> $tglq,
 						'st_approv01' 		=> 0,
@@ -1666,7 +1666,7 @@ class Main extends CI_Controller {
 				$dataq = array(
 						'idno' 				=> $idno,
 						'tgl_request' 		=> $tgl_request,
-						'user_request' 		=> 'BUDI',
+						'user_request' 		=> $this->session->userdata('namaq'),
 						'nama_form'			=> $lokasi, 
 						'tgl_inputform' 	=> $tglq,
 						'st_approv01' 		=> 0,
