@@ -147,6 +147,18 @@ class Main extends CI_Controller {
 		$this->load->view('randomcheck/scp2_randomcheck.php',$data);
 		$this->load->view('footer.php');
 	}
+	
+	public function randomedit_scp2()
+	{		
+		$data['lokasi'] = "SCP II";
+		$data['sform'] = "nokaryawan";
+		// $idno = $_GET['idno'];
+		// $data['idno'] = $idno;
+		// $data['random'] = $this->model_main->getdata_random($idno);
+		$this->load->view('header.php');
+		$this->load->view('randomcheck/scp2_randomcheckedit.php',$data);
+		$this->load->view('footer.php');
+	}
 
 	public function verifikasi_rcscp2_tampil()
 	{
