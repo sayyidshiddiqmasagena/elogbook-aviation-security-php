@@ -1210,11 +1210,10 @@ class Main extends CI_Controller {
             	$add2 = $this->model_main->update_randomorang($where,$data);
 
             	if (($add1) && ($add2)) {
-            		$this->session->set_flashdata('success','approv');
-            	} else {
             		$this->session->set_flashdata('success','error_app');
+            	} else {
+            		$this->session->set_flashdata('success','approv');
             	}
-            	
 
             	redirect('main/randomtampil_scp2');		
 			}
@@ -2465,7 +2464,7 @@ class Main extends CI_Controller {
     function alerttampil(){
     	// echo "masukjii";
     	
-    	$this->session->set_flashdata('success','tambah');    	
+    	$this->session->set_flashdata('success','tambahq');    	
 
     	redirect('main/cobaalert');
 
