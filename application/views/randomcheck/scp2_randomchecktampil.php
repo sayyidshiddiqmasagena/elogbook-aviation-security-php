@@ -262,6 +262,10 @@
                         <i class="fas fa-pen"></i>
                       </a>
 
+                      <a class="m-1 btn btn-primary btn-sm print" href="<?php base_url(); ?>print_orgbrg?idkode=<?php echo $idkode ?>" rel="noopener" target="_blank">
+                            <i class="fas fa-print"></i>
+                      </a>
+
                       <!-- <div class="col-sm-2 float-right">
                         <form action="<?php base_url(); ?>random_scp2" method="POST">
                           <button type="submit" class="btn btn-primary btn btn-block"><span class="fa fa-plus" style="font-size:12px">

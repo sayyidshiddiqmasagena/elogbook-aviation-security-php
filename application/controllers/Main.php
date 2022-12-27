@@ -132,11 +132,13 @@ class Main extends CI_Controller {
 			$this->session->unset_userdata('shiftrdorang');
 		}
 
-		$data['title'] = "SCP II"; 
+		$data['title'] = "SCP II";
+		$data['random'] = $this->model_main->getverifikasi_rcscp2('SCP II',$shift, $team, $tgl); 
 		$data['random'] = $this->model_main->getdata_random('SCP II', $tgl, $team, $shift);
 		$this->load->view('header.php');
 		$this->load->view('randomcheck/scp2_randomchecktampil.php',$data);
 		$this->load->view('footer.php');
+
 	}
 
 	public function random_scp2()
@@ -2351,7 +2353,7 @@ class Main extends CI_Controller {
 
 	public function print_orgbrg()
 	  {
-	    $idkode = "BS20221206";
+	    $idkode = $_GET['idkode'];
 	    $data['random'] = $this->model_main->view_randomorgbrg($idkode);
 		$data['userq'] = $this->model_main->get_userapprov_orgbrg($idkode);
 		$data['idkode'] = $idkode;
@@ -2362,6 +2364,25 @@ class Main extends CI_Controller {
 
 	    // $this->load->view('randomcheck/bagasiislan1_rctable.php', $data);		
 	    $this->load->view('printq',$dataq);
+
+
+		// $idkode = $_GET['idkode'];
+		// $data['random'] = $this->model_main->view_randomorgbrg($idkode);
+		// $data['userq'] = $this->model_main->get_userapprov_orgbrg($idkode);
+		// $data['idkode'] = $idkode;
+
+		// $dataq = [
+		// 	'table'       => $this->load->view('randomcheck/scp2_rctable.php', $data, TRUE)
+		//   ];
+		
+		// $this->load->view('printq', $dataq);	
+
+
+		// $idkode = $_GET['idkode'];
+		// $data['idkode'] = $idkode;
+		// $data['userq'] = $this->model_main->get_userapprov_orgbrg($idkode);
+		
+		// $this->load->view('randomcheck/scp2_rctable_konfirm.php', $data);	
 	}
 
 	public function print_scptransit()

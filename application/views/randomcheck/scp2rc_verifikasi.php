@@ -137,6 +137,14 @@
                             <i class="fas fa-recycle"></i>
                           </a>
 
+                          <!-- <a class="m-1 btn btn-primary btn-sm print" href="javascript:void(0);" data-href="<?php base_url()?>print_orgbrg?idkode=<?php echo $idkode ?>">
+                            <i class="fas fa-print"></i>
+                          </a> -->
+
+                          <a class="m-1 btn btn-primary btn-sm print" href="<?php base_url(); ?>print_orgbrg?idkode=<?php echo $idkode ?>" rel="noopener" target="_blank">
+                            <i class="fas fa-print"></i>
+                          </a>
+
                         </td>
                         <!-- <td style="text-align: center"><?php echo $data->lokasi; ?></td> -->
                       
