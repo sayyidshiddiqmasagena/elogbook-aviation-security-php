@@ -107,6 +107,13 @@ class Model_main extends CI_Model {
 		// $this->db->insert('randomcheck_orgbrg',$dataq);
 	}
 
+	function delete_random($dataq,$idno)
+	{	
+		$this->db->where('idno', $idno);
+		$this->db->update('randomcheck_orgbrg',$dataq);
+		// $this->db->insert('randomcheck_orgbrg',$dataq);
+	}
+
 	// function update_randombagasi2($where,$data){
 	// 	$this->db->where($where);
 	// 	$this->db->update('randomcheck_bagasi_island2',$data);
