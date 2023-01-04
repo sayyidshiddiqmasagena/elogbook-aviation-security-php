@@ -71,6 +71,12 @@ class Login extends CI_Controller
 		redirect('login');
 	}
 
+	public function profile(){
+		$this->load->view('header.php');
+		$this->load->view('halaman_profil.php');
+		$this->load->view('footer.php');
+	}
+
 }
 
 

@@ -59,7 +59,7 @@
                   </div>
                 </div>  
 
-                <a href="<?php base_url(); ?>print_orgbrg" rel="noopener" target="_blank" class="btn btn-primary"><i class="fas fa-print"></i> Print</a>
+                <!-- <a href="<?php base_url(); ?>print_orgbrg" rel="noopener" target="_blank" class="btn btn-primary"><i class="fas fa-print"></i> Print</a> -->
               
               <!-- /.card-header -->
               <div class="card-body">

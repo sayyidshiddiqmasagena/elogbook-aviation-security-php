@@ -1,14 +1,15 @@
 <style type="text/css">
-  .center_div{
+  .center_div {
     margin: 0 auto;
-    width:90% /* value of your choice which suits your alignment */
+    width: 90%
+      /* value of your choice which suits your alignment */
   }
 </style>
-  <div class="content-wrapper">
-    <section class="content-header">
-      <div class="container-fluid">
-        <!-- <div class="row mb-2"> -->
-          <!-- <div class="col-sm-6">
+<div class="content-wrapper">
+  <section class="content-header">
+    <div class="container-fluid">
+      <!-- <div class="row mb-2"> -->
+      <!-- <div class="col-sm-6">
             <h1>General Form</h1>
           </div>
           <div class="col-sm-6">
@@ -17,102 +18,149 @@
               <li class="breadcrumb-item active">General Form</li>
             </ol>
           </div> -->
-        <!-- </div> -->
-      </div>
-    </section>
+      <!-- </div> -->
+    </div>
+  </section>
+  <?php
+  // $tgl= date('Y-m-d', strtotime($this->session->userdata('tglcari_rdbagasi')));
+  // date_default_timezone_set("Asia/Makassar");
+  // $tgl= date('d-m-Y'); // $this->session->userdata('tglcari_rdbagasi');
 
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-4">            
-            <div class="card card-info">
-              <div class="card-header">
-                <h3 class="card-title">Form Edit Random Check di SCP II</h3>
-              </div>
-              <form method="POST" action="<?php base_url();?>random_insert" enctype="multipart/form-data">
+  $tanggal = date('d-m-Y', strtotime($this->session->userdata('tanggal')));
+
+  ?>
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card card-info">
+            <div class="card-header">
+              <h3 class="card-title">Form Edit Random Check di SCP II</h3>
+            </div>
+            <form method="POST" action="<?php base_url();  ?>random_update" enctype="multipart/form-data">
               <div class="center_div">
                 <div class="card-body">
-
-                <div class="form-group">
+                <?php
+                  // print_r($randomidno);
+                  foreach ($randomidno as $rw) {
+                ?>
+                  <div class="form-group">
                     <label>Team</label>
-                      <select class="form-control" name="team" style="width: 100%;">
-                        <option value="ALPHA">ALPHA</option>
-                        <option value="BRAVO">BRAVO</option>
-                        <option value="CHARLIE">CHARLIE</option>
-                        <option value="DELTA">DELTA</option>
-                        <option value="ECHO">ECHO</option>
-                      </select>
+                    <select class="form-control" name="team" style="width: 100%;">
+                    <option <?php if ($rw->team == "ALPHA") {
+                                echo "selected";
+                              } else {
+                                echo "";
+                              } ?> value="ALPHA">ALPHA</option>
+                      <option <?php if ($rw->team == "BRAVO") {
+                                echo "selected";
+                              } else {
+                                echo "";
+                              } ?> value="BRAVO">BRAVO</option>
+                      <option <?php if ($rw->team == "CHARLIE") {
+                                echo "selected";
+                              } else {
+                                echo "";
+                              } ?> value="CHARLIE">CHARLIE</option>
+                      <option <?php if ($rw->team == "DELTA") {
+                                echo "selected";
+                              } else {
+                                echo "";
+                              } ?> value="DELTA">DELTA</option>
+                      <option <?php if ($rw->team == "ECHO") {
+                                echo "selected";
+                              } else {
+                                echo "";
+                              } ?> value="ECHO">ECHO</option>
+                    </select>
                   </div>
 
                   <div class="form-group">
                     <label>Shift</label>
-                      <select class="form-control" name="shift" style="width: 100%;">
-                        <option value="PAGI">PAGI</option>
-                        <option value="SIANG">SIANG</option>
-                        <option value="MALAM">MALAM</option>
-                      </select>
+                    <select class="form-control" name="shift" style="width: 100%;">
+                    <option <?php if ($rw->shift == "PAGI") {
+                                echo "selected";
+                              } else {
+                                echo "";
+                              } ?> value="PAGI">PAGI</option>
+                      <option <?php if ($rw->shift == "SIANG") {
+                                echo "selected";
+                              } else {
+                                echo "";
+                              } ?> value="SIANG">SIANG</option>
+                      <option <?php if ($rw->shift == "MALAM") {
+                                echo "selected";
+                              } else {
+                                echo "";
+                              } ?> value="MALAM">MALAM</option>
+                    </select>
+                    </select>
                   </div>
 
                   <div class="form-group">
                     <label>Tanggal</label>
-                      <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                        <input type="text" name="tanggal" class="form-control datetimepicker-input" data-target="#reservationdate"/>
-                        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                        </div>
+                    <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                    <input type="text" name="tanggal" class="form-control datetimepicker-input" data-target="#reservationdate" value="<?php echo $rw->tanggal?>"/>
+                      <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                       </div>
+                    </div>
                   </div>
 
                   <div class="form-group">
                     <label>Jam</label>
-                      <!-- <input type="text" name="jam" id="jam" class="form-control time" placeholder="00:00" style="width:80px;" onchange="isValidate()" required> -->
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text"><i class="far fa-clock"></i></span>
-                        </div>
-                        <input type="text" class="form-control" name="jam" data-inputmask-alias="datetime" data-inputmask-inputformat="HH:MM" data-mask style="width:80px;" required>
-                      </div>                    
+                    <!-- <input type="text" name="jam" id="jam" class="form-control time" placeholder="00:00" style="width:80px;" onchange="isValidate()" required> -->
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="far fa-clock"></i></span>
+                      </div>
+                      <input type="text" class="form-control" name="jam" data-inputmask-alias="datetime" data-inputmask-inputformat="HH:MM" data-mask style="width:80px;" value="<?php echo $rw->jam_periksa?>" required>
+                    </div>
                   </div>
-                        <input class="form-control" type="hidden" name="lokasi" value="SCP II">
+                  <input class="form-control" type="hidden" name="lokasi" value="SCP II">
 
-                        <div class="form-group">
+                  <div class="form-group">
                     <?php
-                      if ($sform=="karyawan") {
+                    if ($sform == "karyawan") {
                     ?>
-                    <label>Nama Karyawan</label>
+                      <label>Nama Karyawan</label>
                     <?php
-                      } else {
+                    } else {
                     ?>
-                    <label>Nama Penumpang</label>
+                      <label>Nama Penumpang</label>
                     <?php
-                      }
+                    }
                     ?>
-                    <input class="form-control" type="text" name="namapax" required>
-                  </div>
-                  
-                  <div class="form-group">                    
-                      <?php
-                        if ($sform=="karyawan") {
-                      ?>
-                      <label>Instansi</label>
-                      <?php
-                        } else {
-                      ?>
-                      <label>No. Flight</label>
-                      <?php
-                        }
-                      ?>
-                        <input class="form-control" type="text" name="nopen" maxlength="10" onkeyup="this.value = this.value.toUpperCase();" required>                      
+      
+                  <input class="form-control" type="text" name="namapax" value="<?php echo $rw->namapax?>" required>
+                  <input class="form-control" type="hidden" name="idno" value="<?php echo $rw->idno?>" required>
+      
+                    
                   </div>
 
                   <div class="form-group">
-                      <label>Jenis Barang Bawaan</label>                      
-                      <input class="form-control" type="text" name="jenisbrg_bawaan" required>
+                    <?php
+                    if ($sform == "karyawan") {
+                    ?>
+                      <label>Instansi</label>
+                    <?php
+                    } else {
+                    ?>
+                      <label>No. Flight</label>
+                    <?php
+                    }
+                    ?>
+                    <input class="form-control" type="text" name="nopen" maxlength="10" onkeyup="this.value = this.value.toUpperCase();" value="<?php echo $rw->nopen?>" required >
                   </div>
 
-                  <div class="form-group">                    
-                      <label>Metode Pemeriksaan Penumpang</label>                      
-                        <!-- <div class="custom-control custom-radio">
+                  <div class="form-group">
+                    <label>Jenis Barang Bawaan</label>
+                    <input class="form-control" type="text" name="jenisbrg_bawaan" value="<?php echo $rw->jenisbrg_bawaan?>" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Metode Pemeriksaan Penumpang</label>
+                    <!-- <div class="custom-control custom-radio">
                           <input class="custom-control-input" type="radio" id="customRadio1" value="0" name="mtdperiksapax" checked>
                           <label for="customRadio1" class="custom-control-label">Manual Check</label>
                         </div>
@@ -120,55 +168,69 @@
                           <input class="custom-control-input" type="radio" id="customRadio2" value="1" name="mtdperiksapax">
                           <label for="customRadio2" class="custom-control-label">Tidak Manual Check</label>
                         </div> -->
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" value="0" name="mtdperiksapax" checked>
-                          <label class="form-check-label">Manual Check</label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" value="1" name="mtdperiksapax">
-                          <label class="form-check-label">Tidak Manual Check</label>
-                        </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" value="0" name="mtdperiksapax"
+                      <?php if ($rw->mtd_periksapax == 0) 
+                        echo "checked";
+                      ?>>
+                      <label class="form-check-label">Manual Check</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" value="1" name="mtdperiksapax"
+                      <?php if ($rw->mtd_periksapax == 1) 
+                        echo "checked";
+                      ?>>
+                      <label class="form-check-label">Tidak Manual Check</label>
+                    </div>
                   </div>
 
-                  <div class="form-group">                    
-                      <label>Metode Pemeriksaan Barang Bawaan</label>
-                      <div class="form-check">
-                          <input class="form-check-input" type="radio" value="0" name="mtdperiksabrg">
-                          <label class="form-check-label">Manual Check</label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" value="1" type="radio" name="mtdperiksabrg" checked>
-                          <label class="form-check-label">E T D</label>
-                        </div>
+                  <div class="form-group">
+                    <label>Metode Pemeriksaan Barang Bawaan</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" value="0" name="mtdperiksabrg"
+                      <?php if ($rw->mtd_periksabrg == 0) 
+                        echo "checked";
+                      ?>>
+                      <label class="form-check-label">Manual Check</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" value="1" type="radio" name="mtdperiksabrg"
+                      <?php if ($rw->mtd_periksabrg == 1) 
+                        echo "checked";
+                      ?>>
+                      <label class="form-check-label">E T D</label>
+                    </div>
                   </div>
 
-                  <div class="form-group">                    
-                      <label>Personil Pemeriksa</label>                      
-                      <input class="form-control" type="text" name="personil_pemeriksa" required>
+                  <div class="form-group">
+                    <label>Personil Pemeriksa</label>
+                    <input class="form-control" type="text" name="personil_pemeriksa" value="<?php echo $rw->personil_pemeriksa?>" required>
                   </div>
 
-                  <div class="form-group">                    
-                      <label>Hasil Pemeriksaan</label>                      
-                      <input class="form-control" type="text" name="hasil_temuan" >
+                  <div class="form-group">
+                    <label>Hasil Pemeriksaan</label>
+                    <input class="form-control" type="text" name="hasil_temuan" value="<?php echo $rw->hasil_temuan?>">
                   </div>
 
+                  <?php
+              }
+              ?>
                   <!-- sdad -->
 
                   <hr>
                   <div class="card-footer">
-                      <button type="submit" class="btn btn-primary">Simpan</button>
-                      <button type="reset" class="btn btn-danger float-right">Cancel</button>
-                  </div>                  
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="reset" class="btn btn-danger float-right">Cancel</button>
+                  </div>
                 </div>
               </div>
-              </form>
+            </form>
 
-            </div>
+          </div>
 
 
 
         </div>
       </div>
-    </section>
-  </div>
-
+  </section>
+</div>

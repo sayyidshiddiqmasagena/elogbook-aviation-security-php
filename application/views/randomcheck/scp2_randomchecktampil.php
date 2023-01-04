@@ -198,12 +198,14 @@
               <tbody>
                 <?php
                 $idkode = "";
+                $idno = "";
                 $nourut = 1;
                 foreach ($random as $data) {
                   // echo $data->status_approv." - ";
                   // if (empty($data->status_approv) && ($data->status_approv)<>0) 
                   //   $stapprov = "Not Sent";
                   $idkode = $data->idkode;
+                  $idno = $data->idno;
 
                   if (($data->st_approv01) == '0')
                     $stapprov01 = "Proses";
@@ -257,8 +259,8 @@
                       <!-- <a class="m-1 btn btn-warning btn-sm approval" href="javascript:void(0);" data-href="<?php base_url() ?>rcscp2_konfirm?idkode=<?php echo $idkode ?>">
                         <i class="fas fa-pen"></i>
                       </a> -->
-
-                      <a class="m-1 btn btn-warning btn-sm approval" href="<?php base_url(); ?>randomedit_scp2?idkode=<?php echo $idkode ?>" method="POST" >
+                      <?php echo $idno ?>
+                      <a class="m-1 btn btn-warning btn-sm approval" href="<?php base_url(); ?>randomedit_scp2?idno=<?php echo $idno ?>" method="POST" >
                         <i class="fas fa-pen"></i>
                       </a>
 
