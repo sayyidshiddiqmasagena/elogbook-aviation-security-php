@@ -505,8 +505,8 @@ class Main extends CI_Controller {
                 // $idkode = $stteam.$stshift.$tglkd;
 
 				$dataq = array(
-						'idno' => $idno,
-						'tanggal' => $tglq,
+						// 'idno' => $idno,
+						// 'tanggal' => $tglq,
 						'namapax' => $this->input->post('namapax'),
 
 						'nopen' 			=> (!empty($this->input->post('nopen'))) ? $this->input->post('nopen') : NULL,
@@ -523,10 +523,11 @@ class Main extends CI_Controller {
 						// 'idkode'			=> $idkode						
 					);   
 					
+				// $where = array('idno' => $idno);
 				// echo $idno."<br>";	
 				// print_r($dataq);
 				// die();
-            	// $this->model_main->update_random($dataq, $idno);
+            	$this->model_main->update_random($dataq, $idno);
             	if ($lokasi=="SCP II") {
             		redirect('main/randomtampil_scp2');		
             	} else if ($lokasi=="SCP TRANSIT") {

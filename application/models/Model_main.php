@@ -102,7 +102,7 @@ class Model_main extends CI_Model {
 
 	function update_random($dataq,$idno)
 	{	
-		$this->db->where($idno);
+		$this->db->where('idno', $idno);
 		$this->db->update('randomcheck_orgbrg',$dataq);
 		// $this->db->insert('randomcheck_orgbrg',$dataq);
 	}
