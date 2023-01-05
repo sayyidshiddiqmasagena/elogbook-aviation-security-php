@@ -268,7 +268,7 @@
                         <i class="fas fa-pen"></i>
                       </a> -->
 
-                      <a class="m-1 btn btn-danger btn-sm delete" action="<?php base_url();  ?>random_delete?idno=<?php echo $idno ?>" >
+                      <a class="m-1 btn btn-danger btn-sm delete" href="<?php base_url(); ?>random_delete?idno=<?php echo $idno ?>" >
                         <i class="far fa-trash-alt"></i>
                       </a>
 
