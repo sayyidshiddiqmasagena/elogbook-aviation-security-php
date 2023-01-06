@@ -252,15 +252,15 @@
                       ?>
                     </td>
                     <td>
-                      <a class="m-1 btn btn-info btn-sm openPopup" href="javascript:void(0);" data-href="<?php base_url() ?>randomtabel_scp2?idkode=<?php echo $idkode ?>" title="Lihat">
-                        <i class="fas fa-eye"></i>
-                      </a>
+                    <a class="m-1 btn btn-info btn-sm openPopup" href="javascript:void(0);" data-href="<?php base_url()?>randomtabel_scp2?idkode=<?php echo $idkode ?>" title="Lihat">
+                            <i class="fas fa-eye"></i>
+                          </a>
 
                       <!-- <a class="m-1 btn btn-warning btn-sm approval" href="javascript:void(0);" data-href="<?php base_url() ?>rcscp2_konfirm?idkode=<?php echo $idkode ?>">
                         <i class="fas fa-pen"></i>
                       </a> -->
                       <!-- <?php echo $idno ?> -->
-                      <a class="m-1 btn btn-warning btn-sm approval" href="<?php base_url(); ?>randomedit_scp2?idno=<?php echo $idno ?>" method="POST" >
+                      <a class="m-1 btn btn-warning btn-sm approval" href="<?php base_url(); ?>randomedit_scp2?idno=<?php echo $idno ?>" method="POST" title="Edit">
                         <i class="fas fa-pen"></i>
                       </a>
 
@@ -268,11 +268,11 @@
                         <i class="fas fa-pen"></i>
                       </a> -->
 
-                      <a class="m-1 btn btn-danger btn-sm delete" href="<?php base_url(); ?>random_delete?idno=<?php echo $idno ?>" >
+                      <a class="m-1 btn btn-danger btn-sm delete" href="<?php base_url(); ?>random_delete?idno=<?php echo $idno ?>" title="Hapus">
                         <i class="far fa-trash-alt"></i>
                       </a>
 
-                      <a class="m-1 btn btn-success btn-sm print" href="<?php base_url(); ?>print_orgbrg?idkode=<?php echo $idkode ?>" rel="noopener" target="_blank">
+                      <a class="m-1 btn btn-success btn-sm print" href="<?php base_url(); ?>print_orgbrg?idkode=<?php echo $idkode ?>" rel="noopener" target="_blank" title="Print">
                             <i class="fas fa-print"></i>
                       </a>
 
