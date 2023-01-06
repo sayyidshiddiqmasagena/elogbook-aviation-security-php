@@ -141,7 +141,7 @@
                             <i class="fas fa-print"></i>
                           </a> -->
 
-                          <a class="m-1 btn btn-primary btn-sm print" href="<?php base_url(); ?>print_orgbrg?idkode=<?php echo $idkode ?>" rel="noopener" target="_blank">
+                          <a class="m-1 btn btn-success btn-sm print" href="<?php base_url(); ?>print_orgbrg?idkode=<?php echo $idkode ?>" rel="noopener" target="_blank">
                             <i class="fas fa-print"></i>
                           </a>
 

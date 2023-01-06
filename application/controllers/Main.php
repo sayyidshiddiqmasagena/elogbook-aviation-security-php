@@ -12,6 +12,9 @@ class Main extends CI_Controller {
 		$this->load->model('auth_model');
 		$this->auth_model->cek_login();
 
+		header('Cache-Control: no-cache, must-revalidate, max-age=0');
+		header('Cache-Control: post-check=0, pre-check=0',false);
+		header('Pragma: no-cache');
 		// if(!$this->session->userdata('usr_id'))
 		// 	redirect('login');
 	}
@@ -147,10 +150,10 @@ class Main extends CI_Controller {
 	{		
 		$data['lokasi'] = "SCP II";
 		$data['sform'] = "nokaryawan";
-		$idno = $_GET['idno']; 
-		// $data['random'] = $this->model_main->getverifikasi_rcscp2();
-		$data['random'] = $this->model_main->getdata_random();
-		$data['idno'] = $idno;
+		// // $idno = $_GET['idno']; 
+		// // $data['random'] = $this->model_main->getverifikasi_rcscp2();
+		// $data['random'] = $this->model_main->getdata_random('SCP II',$shift, $team, $tgl);
+		// // $data['idno'] = $idno;
 		$this->load->view('header.php');
 		$this->load->view('randomcheck/scp2_randomcheck.php',$data);
 		$this->load->view('footer.php');
