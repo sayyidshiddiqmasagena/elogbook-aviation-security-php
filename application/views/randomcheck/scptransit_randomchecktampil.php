@@ -212,7 +212,7 @@
                           ?>
                         </td>
                         <td>
-                          <!-- <a class="m-1 btn btn-info btn-sm openPopup" href="javascript:void(0);" data-href="<?php base_url()?>randomtabel_scp2?idkode=<?php echo $idkode ?>" title="Lihat">
+                      <!-- <a class="m-1 btn btn-info btn-sm openPopup" href="javascript:void(0);" data-href="<?php base_url()?>randomtabel_scp2?idkode=<?php echo $idkode ?>" title="Lihat">
                         <i class="fas fa-eye"></i>
                       </a> -->
                       
@@ -225,7 +225,7 @@
                       </a>
 
                       <a class="m-1 btn btn-success btn-sm print" href="<?php base_url(); ?>print_scptransit?idkode=<?php echo $idkode ?>" rel="noopener" target="_blank" title="Print">
-                            <i class="fas fa-print"></i>
+                          <i class="fas fa-print"></i>
                       </a>
 
                         </td>

@@ -40,6 +40,15 @@ class Model_main extends CI_Model {
 		return $hasil->result();
 	}
 
+	public function getdata_randomscpinter_idno($idno)
+	{
+		$this->db->select('*');
+		$this->db->from('randomcheck_orgbrg_inter');
+		$this->db->where('idno',$idno);
+		$hasil = $this->db->get();
+		return $hasil->result();
+	}
+
 	public function getdata_random_scptransit($lokasi, $tgl, $team, $shift)
 	{
 		$this->db->select('*');
@@ -123,6 +132,13 @@ class Model_main extends CI_Model {
 		// $this->db->insert('randomcheck_orgbrg',$dataq);
 	}
 
+	function update_random_scpinter($dataq,$idno)
+	{	
+		$this->db->where('idno', $idno);
+		$this->db->update('randomcheck_orgbrg_inter',$dataq);
+		// $this->db->insert('randomcheck_orgbrg',$dataq);
+	}
+
 	function delete_random($idno)
 	{	
 		$this->db->where('idno', $idno);
@@ -134,6 +150,12 @@ class Model_main extends CI_Model {
 	{	
 		$this->db->where('idno', $idno);
 		$this->db->delete('randomcheck_orgbrg_transit');
+	}
+
+	function delete_random_scpinter($idno)
+	{	
+		$this->db->where('idno', $idno);
+		$this->db->delete('randomcheck_orgbrg_inter');
 	}
 
 	public function insert_random_scptransit($dataq)
