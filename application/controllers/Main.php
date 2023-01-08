@@ -3103,7 +3103,7 @@ class Main extends CI_Controller {
 
 	public function print_scptransit()
 	  {
-	    $idkode = "CM20221209";
+	    $idkode = $_GET['idkode'];
 	    $data['random'] = $this->model_main->view_randomorgbrg_transit($idkode);
 		$data['userq'] = $this->model_main->get_userapprov_orgbrg_transit($idkode);
 		$data['idkode'] = $idkode;
@@ -3118,7 +3118,7 @@ class Main extends CI_Controller {
 
 	public function print_scpinter()
 	  {
-	    $idkode = "DP20221212";
+	    $idkode = $_GET['idkode'];
 	    $data['random'] = $this->model_main->view_randomorgbrg_inter($idkode);
 		$data['userq'] = $this->model_main->get_userapprov_orgbrg_inter($idkode);
 		$data['idkode'] = $idkode;
@@ -3133,7 +3133,7 @@ class Main extends CI_Controller {
 
 	public function print_scpkaryawan()
 	  {
-	    $idkode = "ES20221213";
+	    $idkode = $_GET['idkode'];
 	    $data['random'] = $this->model_main->view_randomorgbrg_karyawan($idkode);
 		$data['userq'] = $this->model_main->get_userapprov_orgbrg_karyawan($idkode);
 		$data['idkode'] = $idkode;
@@ -3148,7 +3148,7 @@ class Main extends CI_Controller {
 
 	public function print_scppos2()
 	  {
-	    $idkode = "BP20221213";
+	    $idkode = $_GET['idkode'];
 	    $data['random'] = $this->model_main->view_randomorgbrg_scppos2($idkode);
 		$data['userq'] = $this->model_main->get_userapprov_orgbrg_scppos2($idkode);
 		$data['idkode'] = $idkode;
