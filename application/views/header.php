@@ -84,7 +84,7 @@
         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
           <div class="user-image img-circle elevation-2" style="width:2.5rem;height:2.5rem;overflow:hidden">
             <img class="img-fluid"
-                src="<?= base_url()?>assets/dist/img/user7-128x128.jpg"
+                src="<?= base_url()?>assets/dist/img/contoh_foto_user.jpg"
                 alt="User profile picture">
           </div>
             
@@ -94,7 +94,7 @@
           <li class="user-header bg-primary">
             <div class="img-circle elevation-2 mx-auto" style="width:6rem;height:6rem;overflow:hidden">
                 <img class="img-fluid"
-                  src="<?= base_url()?>assets/dist/img/user7-128x128.jpg"
+                  src="<?= base_url()?>assets/dist/img/contoh_foto_user.jpg"
                   alt="User profile picture">
             </div>
             <p>
@@ -128,7 +128,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="<?= base_url(); ?>assets/dist/img/user7-128x128.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="<?= base_url(); ?>assets/dist/img/contoh_foto_user.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block"><?php echo $this->session->userdata('namaq'); ?></a>
