@@ -67,6 +67,15 @@ class Model_main extends CI_Model {
 		return $hasil->result();
 	}
 
+	public function getdata_randombagasiislan1_idno($idno)
+	{
+		$this->db->select('*');
+		$this->db->from('randomcheck_bagasi');
+		$this->db->where('idno',$idno);
+		$hasil = $this->db->get();
+		return $hasil->result();
+	}
+
 	public function getdata_random_scptransit($lokasi, $tgl, $team, $shift)
 	{
 		$this->db->select('*');
@@ -171,6 +180,13 @@ class Model_main extends CI_Model {
 		// $this->db->insert('randomcheck_orgbrg',$dataq);
 	}
 
+	function update_random_bagasiislan1($dataq,$idno)
+	{	
+		$this->db->where('idno', $idno);
+		$this->db->update('randomcheck_bagasi',$dataq);
+		// $this->db->insert('randomcheck_orgbrg',$dataq);
+	}
+
 	function delete_random($idno)
 	{	
 		$this->db->where('idno', $idno);
@@ -200,6 +216,12 @@ class Model_main extends CI_Model {
 	{	
 		$this->db->where('idno', $idno);
 		$this->db->delete('randomcheck_orgbrg_scppos2');
+	}
+
+	function delete_random_bagasiislan1($idno)
+	{	
+		$this->db->where('idno', $idno);
+		$this->db->delete('randomcheck_bagasi');
 	}
 
 	public function insert_random_scptransit($dataq)

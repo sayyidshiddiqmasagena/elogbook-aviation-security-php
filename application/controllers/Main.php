@@ -241,6 +241,16 @@ class Main extends CI_Controller {
 		$this->load->view('footer.php');
 	}
 
+	public function randomedit_bagasiislan1()
+	{	
+		$idno = $_GET['idno'];
+		$data['lokasi'] = "SCP I (ISLAND I)";
+		$data['randomidno'] = $this->model_main->getdata_randombagasiislan1_idno($idno);
+		$this->load->view('header.php');
+		$this->load->view('randomcheck/bagasiislan1_rcedit.php',$data);
+		$this->load->view('footer.php');
+	}
+
 	public function verifikasi_rcscp2_tampil()
 	{
 		$tgl = date('Y-m-d');
@@ -860,6 +870,78 @@ class Main extends CI_Controller {
 		}
 	}
 
+	public function random_update_bagasiislan1()	// untuk simpan data RC (random check) orang dan barang di SCP 2, trnasit, inter, karyawan dan pos 2
+	{
+		if(isset($_POST['idno'])){
+			if (!empty($this->input->post('idno'))){
+				date_default_timezone_set("Asia/Makassar");
+				$tglq = date('Y-m-d H:i:s');
+
+				$idno = $this->input->post('idno');
+				$tglq = date('Y-m-d', strtotime($_POST['tanggal'])); // ." ".$jam;
+				$tglkd = date('Ymd', strtotime($_POST['tanggal']));
+				$lokasi = $this->input->post('lokasi');
+				$team = $this->input->post('team');
+				$shift = $this->input->post('shift');
+
+				if ($team == "ALPHA") $stteam="A";
+                else if ($team == "BRAVO") $stteam="B";
+                else if ($team == "CHARLIE") $stteam="C";
+                else if ($team == "DELTA") $stteam="D";
+                else $stteam="E";
+
+                if ($shift == "PAGI") $stshift="P";
+                else if ($shift == "SIANG") $stshift="S";
+                else $stshift="M";
+
+                // $idkode = $stteam.$stshift.$tglkd;
+
+				$dataq = array(
+						// 'idno' => $idno,
+						// 'tanggal' => $tglq,
+						'namapemilik' 	=> $this->input->post('namapax'),
+						'nopen'			=> (!empty($this->input->post('nopen'))) ? $this->input->post('nopen') : NULL, 
+						'jns_bagasi' 	=> (!empty($this->input->post('jenisbrg_bawaan'))) ? $this->input->post('jenisbrg_bawaan') : NULL, 
+
+						'no_claim' 	=> $this->input->post('no_claim'), 
+						
+						'mtd_periksabagasi' => $this->input->post('mtdperiksabrg'), 
+						'personil_pemeriksa'=> (!empty($this->input->post('personil_pemeriksa'))) ? $this->input->post('personil_pemeriksa') : NULL, 
+						'hasil_temuan' 		=> (!empty($this->input->post('hasil_temuan'))) ? $this->input->post('hasil_temuan') : NULL, 
+						'lokasi'	  		=> $lokasi,
+						'jam_periksa' 		=> (!empty($this->input->post('jam'))) ? $this->input->post('jam') : NULL,
+						'id_users'			=> $this->session->userdata('iduser'),
+						'team'				=> $this->input->post('team'), 
+						'shift'				=> $this->input->post('shift'),
+						// 'idkode'			=> $idkode						
+					);   
+					
+				// $where = array('idno' => $idno);
+				// echo $idno."<br>";	
+				// print_r($dataq);
+				// die();
+            	$this->model_main->update_random_bagasiislan1($dataq, $idno);
+            	if ($lokasi=="SCP II") {
+            		redirect('main/randomtampil_scp2');		
+            	} else if ($lokasi=="SCP TRANSIT") {
+            		redirect('main/randomtampil_scptransit');		
+            	} else if ($lokasi=="SCP INTERNASIONAL") {
+            		redirect('main/randomtampil_scpinter');		
+            	} else if ($lokasi=="SCP KARYAWAN") {
+            		redirect('main/randomtampil_scpkaryawan');		
+            	} else if ($lokasi=="SCP POS OPERASIONAL 2") {
+            		redirect('main/randomtampil_scppos2');		
+            	} else if ($lokasi=="SCP POS 2") {
+            		redirect('main/randomtampil_scppos2');		
+            	} else if ($lokasi=="SCP I (ISLAND I)") {
+            		redirect('main/randomtampil_bagasi1');		
+            	} else if ($lokasi=="SCP I (ISLAND II)") {
+            		redirect('main/randomtampil_bagasi2');		
+            	}
+			}
+		}
+	}
+
 	public function random_delete()	// untuk simpan data RC (random check) orang dan barang di SCP 2, trnasit, inter, karyawan dan pos 2
 	{
 		$idno = $_GET['idno'];
@@ -945,6 +1027,25 @@ class Main extends CI_Controller {
 	{
 		$idno = $_GET['idno'];
         $this->model_main->delete_random_scppos2($idno);
+		// if ($lokasi=="SCP II") {
+            	// 	redirect('main/randomtampil_scp2');		
+            	// } else if ($lokasi=="SCP TRANSIT") {
+            	// 	redirect('main/randomtampil_scptransit');		
+            	// } else if ($lokasi=="SCP INTERNASIONAL") {
+            	// 	redirect('main/randomtampil_scpinter');		
+            	// } else if ($lokasi=="SCP KARYAWAN") {
+            	// 	redirect('main/randomtampil_scpkaryawan');		
+            	// } else if ($lokasi=="SCP POS2") {
+            	// 	redirect('main/randomtampil_scppos2');		
+            	// } else if ($lokasi=="SCP POS 2") {
+            	// 	redirect('main/randomtampil_scppos2');		
+            	// }	
+	}
+
+	public function random_delete_bagasiislan1()	// untuk simpan data RC (random check) orang dan barang di SCP 2, trnasit, inter, karyawan dan pos 2
+	{
+		$idno = $_GET['idno'];
+        $this->model_main->delete_random_bagasiislan1($idno);
 		// if ($lokasi=="SCP II") {
             	// 	redirect('main/randomtampil_scp2');		
             	// } else if ($lokasi=="SCP TRANSIT") {
@@ -2837,7 +2938,7 @@ class Main extends CI_Controller {
 
     public function print_bagasi()
 	  {
-	    $idkode = "BP20220518";
+	    $idkode = $_GET['idkode'];
 	    $data['random'] = $this->model_main->view_randombagasi($idkode);
 		$data['userq'] = $this->model_main->get_userapprov($idkode);
 		$data['idkode'] = $idkode;
@@ -2852,7 +2953,7 @@ class Main extends CI_Controller {
 
 	public function print_bagasi2()
 	  {
-	    $idkode = "DS20221212";
+	    $idkode = $_GET['idkode'];
 	    $data['random'] = $this->model_main->view_randombagasi2($idkode);
 		$data['userq'] = $this->model_main->get_userapprov_bagasi2($idkode);
 		$data['idkode'] = $idkode;
