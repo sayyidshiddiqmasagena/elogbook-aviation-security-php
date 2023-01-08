@@ -27,7 +27,7 @@
           <div class="col-md-4">            
             <div class="card card-info">
               <div class="card-header">
-                <h3 class="card-title">Form Random Check di SCP POS OPERASIONAL 2</h3>
+                <h3 class="card-title">Form Random Check di SCP POS OPERASIONAL II</h3>
               </div>
               <form method="POST" action="<?php base_url();?>random_insert_scppos2" enctype="multipart/form-data">
               <div class="center_div">

@@ -4,7 +4,7 @@
       <div class="container-fluid">
         <!-- <div class="row mb-2"> -->
           <div class="col-sm-12">
-            <h4>RANDOM CHECK & UNPREDICTIBLE ORANG & BARANG DI SCP POS OPERASIONAL 2</h4>
+            <h4>RANDOM CHECK & UNPREDICTIBLE ORANG & BARANG DI SCP POS OPERASIONAL II</h4>
           </div><!-- 
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -161,12 +161,14 @@
                   <tbody>
                       <?php
                       $idkode = "";
+                      $idno = "";
                       $nourut=1;
                       foreach ($random as $data) {                    
                         // echo $data->status_approv." - ";
                             // if (empty($data->status_approv) && ($data->status_approv)<>0) 
                             //   $stapprov = "Not Sent";
                             $idkode = $data->idkode;
+                            $idno = $data->idno;
 
                             if (($data->st_approv01) == '0') 
                               $stapprov01 = "Proses";
@@ -209,7 +211,23 @@
                             echo $stapprov02;
                           ?>
                         </td>
-                        <td></td>
+                        <td>
+                          <!-- <a class="m-1 btn btn-info btn-sm openPopup" href="javascript:void(0);" data-href="<?php base_url()?>randomtabel_scp2?idkode=<?php echo $idkode ?>" title="Lihat">
+                        <i class="fas fa-eye"></i>
+                      </a> -->
+                      
+                      <a class="m-1 btn btn-warning btn-sm approval" href="<?php base_url(); ?>randomedit_scppos2?idno=<?php echo $idno ?>" method="POST" title="Edit">
+                        <i class="fas fa-pen"></i>
+                      </a>
+
+                      <a class="m-1 btn btn-danger btn-sm delete" href="<?php base_url(); ?>random_delete_scppos2?idno=<?php echo $idno ?>" title="Hapus">
+                        <i class="far fa-trash-alt"></i>
+                      </a>
+
+                      <a class="m-1 btn btn-success btn-sm print" href="<?php base_url(); ?>print_scppos2?idkode=<?php echo $idkode ?>" rel="noopener" target="_blank" title="Print">
+                          <i class="fas fa-print"></i>
+                      </a>
+                        </td>
                         <!-- <td style="text-align: center"><?php echo $data->lokasi; ?></td> -->
                       
                     </tr>
