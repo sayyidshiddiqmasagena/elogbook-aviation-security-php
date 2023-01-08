@@ -252,9 +252,9 @@
                       ?>
                     </td>
                     <td>
-                    <a class="m-1 btn btn-info btn-sm openPopup" href="javascript:void(0);" data-href="<?php base_url()?>randomtabel_scp2?idkode=<?php echo $idkode ?>" title="Lihat">
-                            <i class="fas fa-eye"></i>
-                          </a>
+                      <!-- <a class="m-1 btn btn-info btn-sm openPopup" href="javascript:void(0);" data-href="<?php base_url()?>randomtabel_scp2?idkode=<?php echo $idkode ?>" title="Lihat">
+                        <i class="fas fa-eye"></i>
+                      </a> -->
 
                       <!-- <a class="m-1 btn btn-warning btn-sm approval" href="javascript:void(0);" data-href="<?php base_url() ?>rcscp2_konfirm?idkode=<?php echo $idkode ?>">
                         <i class="fas fa-pen"></i>

@@ -35,9 +35,9 @@
         <div class="col-md-4">
           <div class="card card-info">
             <div class="card-header">
-              <h3 class="card-title">Form Edit Random Check di SCP II</h3>
+              <h3 class="card-title">Form Edit Random Check di SCP TRANSIT</h3>
             </div>
-            <form method="POST" action="<?php base_url();  ?>random_update" enctype="multipart/form-data">
+            <form method="POST" action="<?php base_url();  ?>random_update_scptransit" enctype="multipart/form-data">
               <div class="center_div">
                 <div class="card-body">
                 <?php
@@ -117,7 +117,7 @@
                       <input type="text" class="form-control" name="jam" data-inputmask-alias="datetime" data-inputmask-inputformat="HH:MM" data-mask style="width:80px;" value="<?php echo $rw->jam_periksa?>" required>
                     </div>
                   </div>
-                  <input class="form-control" type="hidden" name="lokasi" value="SCP II">
+                  <input class="form-control" type="hidden" name="lokasi" value="SCP TRANSIT">
 
                   <div class="form-group">
                     <?php
@@ -220,7 +220,7 @@
                   <hr>
                   <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Simpan</button>
-                    <button class="btn btn-danger float-right" href="<?= base_url(); ?>main/randomtampil_scp2" >Cancel</button>
+                    <button class="btn btn-danger float-right" href="<?= base_url(); ?>main/randomtampil_scptransit" >Cancel</button>
                   </div>
                 </div>
               </div>
