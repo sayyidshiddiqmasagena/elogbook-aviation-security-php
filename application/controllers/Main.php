@@ -2011,9 +2011,9 @@ class Main extends CI_Controller {
             	$add2 = $this->model_main->update_randomorang_transit($where,$data);
 
             	if (($add1) && ($add2)) {
-            		$this->session->set_flashdata('success','approv');
-            	} else {
             		$this->session->set_flashdata('success','error_app');
+            	} else {
+            		$this->session->set_flashdata('success','approv');
             	}
             	
 
@@ -2095,9 +2095,9 @@ class Main extends CI_Controller {
             	$add2 = $this->model_main->update_randomorang_inter($where,$data);
 
             	if (($add1) && ($add2)) {
-            		$this->session->set_flashdata('success','approv');
-            	} else {
             		$this->session->set_flashdata('success','error_app');
+            	} else {
+            		$this->session->set_flashdata('success','approv');
             	}
             	
 
@@ -2179,9 +2179,9 @@ class Main extends CI_Controller {
             	$add2 = $this->model_main->update_randomorang_karyawan($where,$data);
 
             	if (($add1) && ($add2)) {
-            		$this->session->set_flashdata('success','approv');
-            	} else {
             		$this->session->set_flashdata('success','error_app');
+            	} else {
+            		$this->session->set_flashdata('success','approv');
             	}
             	
 
@@ -2263,9 +2263,9 @@ class Main extends CI_Controller {
             	$add2 = $this->model_main->update_randomorang_scppos2($where,$data);
 
             	if (($add1) && ($add2)) {
-            		$this->session->set_flashdata('success','approv');
-            	} else {
             		$this->session->set_flashdata('success','error_app');
+            	} else {
+            		$this->session->set_flashdata('success','approv');
             	}
             	
 
@@ -2347,9 +2347,9 @@ class Main extends CI_Controller {
             	$add2 = $this->model_main->update_randombagasi($where,$data);
 
             	if (($add1) && ($add2)) {
-            		$this->session->set_flashdata('success','approv');
-            	} else {
             		$this->session->set_flashdata('success','error_app');
+            	} else {
+            		$this->session->set_flashdata('success','approv');
             	}
             	
 
@@ -2431,9 +2431,9 @@ class Main extends CI_Controller {
             	$add2 = $this->model_main->update_randombagasi2($where,$data);
 
             	if (($add1) && ($add2)) {
-            		$this->session->set_flashdata('success','approv');
-            	} else {
             		$this->session->set_flashdata('success','error_app');
+            	} else {
+            		$this->session->set_flashdata('success','approv');
             	}
             	
 
