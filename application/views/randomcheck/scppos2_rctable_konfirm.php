@@ -9,8 +9,8 @@
               foreach ($userq as $data) {
             ?>
 
-            <input class="form-control" type="text" name="iduser_approv01" value="<?= $data->iduser_approv01; ?>">
-            <input class="form-control" type="text" name="iduser_approv02" value="<?= $data->iduser_approv02; ?>">
+            <input class="form-control" type="hidden" name="iduser_approv01" value="<?= $data->iduser_approv01; ?>">
+            <input class="form-control" type="hidden" name="iduser_approv02" value="<?= $data->iduser_approv02; ?>">
 
             <?php
               }
