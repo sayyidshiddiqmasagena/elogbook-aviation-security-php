@@ -507,6 +507,18 @@ class Model_main extends CI_Model {
 		$hasil = $this->db->get();
 		return $hasil->result();
 	}
+
+	public function getverifikasi_rcscp2_print($lokasi, $idkode)
+	{
+		$this->db->select('*');
+		$this->db->from('form_approval_orgbrg');
+		$this->db->where('nama_form',$lokasi);
+		// $this->db->where('team',$team);
+		// $this->db->where('shift',$shift);
+		// $this->db->where('tgl_inputform',$tgl);
+		$hasil = $this->db->get();
+		return $hasil->result();
+	}
 	
 	public function getverifikasi_rcscptransit($lokasi, $shift, $team, $tgl)
 	{

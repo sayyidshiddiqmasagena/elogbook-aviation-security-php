@@ -137,6 +137,10 @@
                             <i class="fas fa-recycle"></i>
                           </a>
 
+                          <a class="m-1 btn btn-success btn-sm print" href="<?php base_url(); ?>print_bagasi?idkode=<?php echo $idkode ?>" rel="noopener" target="_blank" title="Print">
+                          <i class="fas fa-print"></i>
+                      </a>
+
                         </td>
                         <!-- <td style="text-align: center"><?php echo $data->lokasi; ?></td> -->
                       

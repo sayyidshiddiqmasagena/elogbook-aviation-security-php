@@ -3072,6 +3072,7 @@ class Main extends CI_Controller {
 	    $idkode = $_GET['idkode'];
 	    $data['random'] = $this->model_main->view_randomorgbrg($idkode);
 		$data['userq'] = $this->model_main->get_userapprov_orgbrg($idkode);
+		$data['ver_rcscp2'] = $this->model_main->getverifikasi_rcscp2_print('SCP II', $idkode);
 		$data['idkode'] = $idkode;
 
 	    $dataq = [
