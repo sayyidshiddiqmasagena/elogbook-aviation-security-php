@@ -25,8 +25,26 @@ class Main extends CI_Controller {
 	    $this->session->set_userdata('team','ECHO');
 	    $this->session->set_userdata('shift','MALAM');
 
-	    // redirect('main/randomtampil_scp2');	
+		$data['jmlrcob_scp2'] = $this->model_main->readCount('randomcheck_orgbrg');
+		$data['jmlrcob_scptransit'] = $this->model_main->readCount('randomcheck_orgbrg_transit');
+		$data['jmlrcob_scpint'] = $this->model_main->readCount('randomcheck_orgbrg_inter');
+		$data['jmlrcob_scpkaryawan'] = $this->model_main->readCount('randomcheck_orgbrg_karyawan');
+		$data['jmlrcob_scpops'] = $this->model_main->readCount('randomcheck_orgbrg_scppos2');
+
+		$data['jmlrcbagasi_scp1'] = $this->model_main->readCount('randomcheck_bagasi');
+		$data['jmlrcbagasi_scp2'] = $this->model_main->readCount('randomcheck_bagasi_island2');
+
+		$data['jmlver_orgbrgscp2'] = $this->model_main->readCount('form_approval_orgbrg');
+		$data['jmlver_orgbrgscptransit'] = $this->model_main->readCount('form_approval_orgbrg_transit');
+		$data['jmlver_orgbrgscpint'] = $this->model_main->readCount('form_approval_orgbrg_inter');
+		$data['jmlver_orgbrgscpkaryawan'] = $this->model_main->readCount('form_approval_orgbrg_karyawan');
+		$data['jmlver_orgbrgscpops2'] = $this->model_main->readCount('form_approval_orgbrg_scppos2');
+
+		$data['jmlverbagasi_scp1'] = $this->model_main->readCount('form_approval');
+		$data['jmlverbagasi_scp2'] = $this->model_main->readCount('form_approval_bagasi_island2');
+
 	    $this->load->view('header.php');
+		$this->load->view('v_scpdashboard.php', $data);
 	    $this->load->view('footer.php');
 	}
 

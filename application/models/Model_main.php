@@ -731,5 +731,9 @@ class Model_main extends CI_Model {
 		$hasil = $this->db->get();
 		return $hasil->result();
 	}
-
+	
+	function readCount($data){
+		$hasil=$this->db->get($data);
+		return $hasil->num_rows();
+	}
 }
